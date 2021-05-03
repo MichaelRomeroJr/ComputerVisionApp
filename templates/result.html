@@ -1,0 +1,45 @@
+{% load static %}
+
+
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+* {
+  box-sizing: border-box;
+}
+
+.column {
+  float: left;
+  width: 33.33%;
+  padding: 5px;
+}
+
+/* Clearfix (clear floats) */
+.row::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+</style>
+</head>
+<body>
+
+<h1>Results</h1>
+<p>
+{% for r in res %}
+{{r}}<br/>
+{% endfor %}
+</p>
+<div class="row">
+  <div class="column">
+  	<h2>Original</h2>
+    <img src="{% static 'media/image.jpg'%}" alt="Original" style="width:100%">
+  </div>
+  <div class="column">
+  	<h2>Predictions</h2>
+    <img src="{% static 'media/ImageResult.jpg'%}" alt="Predictions" style="width:100%">
+  </div>
+</div>
+
+</body>
